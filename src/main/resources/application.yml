@@ -1,0 +1,16 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /csv-api-example
+
+spring:
+  datasource:
+    db: movie_db
+    host: localhost
+    port: 5432
+    default-schema: movie
+    url: "jdbc:postgresql://${spring.datasource.host}:${spring.datasource.port}/${spring.datasource.db}?currentSchema=${spring.datasource.default-schema}"
+    username: user
+    password: user
+  flyway:
+    schemas: ${spring.datasource.default-schema}
