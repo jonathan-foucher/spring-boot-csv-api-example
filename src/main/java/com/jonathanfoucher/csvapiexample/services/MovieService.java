@@ -11,7 +11,6 @@ import com.jonathanfoucher.csvapiexample.data.model.Movie;
 import com.jonathanfoucher.csvapiexample.data.repository.MovieRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +24,6 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 @Service
 @RequiredArgsConstructor
-@Slf4j
 public class MovieService {
     private final MovieRepository movieRepository;
     private final CsvMapper mapper;
