@@ -29,7 +29,7 @@ public class MovieController {
     }
 
     @PostMapping(consumes = CSV_TYPE)
-    public void save(@RequestBody InputStreamResource movies) {
-        movieService.save(movies);
+    public void saveAll(@RequestBody InputStreamResource movies) {
+        movieService.saveAll(movies);
     }
 }

@@ -31,7 +31,7 @@ public class MovieService {
     private final CsvMapper mapper;
 
     @Transactional
-    public void save(InputStreamResource resource) {
+    public void saveAll(InputStreamResource resource) {
         MappingIterator<MovieDto> iterator;
         try {
             InputStreamReader reader = new InputStreamReader(resource.getInputStream());

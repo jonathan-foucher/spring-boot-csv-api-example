@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 import static com.fasterxml.jackson.databind.MapperFeature.SORT_PROPERTIES_ALPHABETICALLY;
 import static com.fasterxml.jackson.databind.SerializationFeature.WRITE_DATES_AS_TIMESTAMPS;
+import static com.fasterxml.jackson.dataformat.csv.CsvParser.Feature.SKIP_EMPTY_LINES;
 
 @Configuration
 public class JacksonConfig {
@@ -16,6 +17,7 @@ public class JacksonConfig {
         return CsvMapper.builder()
                 .propertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE)
                 .addModule(new JavaTimeModule())
+                .enable(SKIP_EMPTY_LINES)
                 .disable(WRITE_DATES_AS_TIMESTAMPS)
                 .disable(SORT_PROPERTIES_ALPHABETICALLY)
                 .build();
